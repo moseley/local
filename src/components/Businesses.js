@@ -53,10 +53,10 @@ const Businesses = props => {
       await axios
         .get(yelpUrl, {
           headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow-Origin': `${process.env.PUBLIC_URL}`,
+            // Accept: 'application/json',
+            // 'Content-Type': 'application/json',
+            // 'Access-Control-Allow-Headers': '*',
+            // 'Access-Control-Allow-Origin': `${process.env.PUBLIC_URL}`,
             Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
           },
           params: params
