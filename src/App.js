@@ -9,11 +9,6 @@ import Tertiary from './containers/Tertiary';
 import NotFound from './containers/NotFound';
 
 const App = () => {
-  // let subdirectory = '';
-  console.log(process.env.NODE_ENV);
-  const parts = process.env.PUBLIC_URL.split('/');
-  console.log(parts);
-
   const subdirectory = process.env.NODE_ENV === 'development' ? '' : '/local';
 
   return (
