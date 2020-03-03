@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -54,6 +55,8 @@ const useStyles = makeStyles(theme => ({
 const Header = props => {
   const classes = useStyles();
 
+  const subdirectory = process.env.NODE_ENV === 'development' ? '' : '/local';
+
   return (
     <div className={classes.root}>
       <AppBar position='static' color='secondary' className={classes.bar}>
@@ -93,7 +96,8 @@ const Header = props => {
               Advertisers
             </Link>
             <Link
-              href='https://wealthwisdomwellness.us/directory'
+              component={RouterLink}
+              to={`${subdirectory}/`}
               className={classes.activeLink}
             >
               Directory
