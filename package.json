@@ -24,10 +24,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "yarn build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "test": "CI=true react-scripts test --env=jsdom",
-    "test:coverage": "yarn test --coverage",
+    "test:coverage": "yarn run test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
