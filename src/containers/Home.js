@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-around'
   },
   section: {
     margin: theme.spacing(2, 0)
@@ -44,7 +44,7 @@ const Home = props => {
             {primaryCategory.secondary.map(secondaryCategory => (
               <HomeCard
                 key={secondaryCategory.id}
-                path={`/${primaryCategory.id}/${secondaryCategory.id}`}
+                path={`/local/${primaryCategory.id}/${secondaryCategory.id}`}
                 title={secondaryCategory.title}
                 image={secondaryCategory.image}
               />

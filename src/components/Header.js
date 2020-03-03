@@ -55,8 +55,6 @@ const useStyles = makeStyles(theme => ({
 const Header = props => {
   const classes = useStyles();
 
-  const subdirectory = process.env.NODE_ENV === 'development' ? '' : '/local';
-
   return (
     <div className={classes.root}>
       <AppBar position='static' color='secondary' className={classes.bar}>
@@ -97,7 +95,7 @@ const Header = props => {
             </Link>
             <Link
               component={RouterLink}
-              to={`${subdirectory}/`}
+              to='/local/'
               className={classes.activeLink}
             >
               Directory

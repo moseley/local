@@ -29,7 +29,7 @@ const SecondaryCategory = props => {
         <div key={tertiaryCategory.id} className={classes.links}>
           <SubCard
             key={tertiaryCategory.id}
-            path={`/${primary}/${category.id}/${tertiaryCategory.id}`}
+            path={`/local/${primary}/${category.id}/${tertiaryCategory.id}`}
             title={tertiaryCategory.title}
           />
         </div>

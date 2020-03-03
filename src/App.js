@@ -8,29 +8,22 @@ import Secondary from './containers/Secondary';
 import Tertiary from './containers/Tertiary';
 import NotFound from './containers/NotFound';
 
-const App = () => {
-  const subdirectory = process.env.NODE_ENV === 'development' ? '' : '/local';
-
-  return (
-    <div className='App'>
-      <Header />
-      <main>
-        <Switch>
-          <Route path={`${subdirectory}/`} exact component={Home} />
-          <Route
-            path={`${subdirectory}/:primary/:secondary/:tertiary`}
-            component={Tertiary}
-          />
-          <Route
-            path={`${subdirectory}/:primary/:secondar`}
-            component={Secondary}
-          />
-          <Route path={`${subdirectory}/:primary`} component={Primary} />
-          <Route component={NotFound} />
-        </Switch>
-      </main>
-    </div>
-  );
-};
+const App = () => (
+  <div className='App'>
+    <Header />
+    <main>
+      <Switch>
+        <Route path='/local/' exact component={Home} />
+        <Route
+          path='/local/:primary/:secondary/:tertiary'
+          component={Tertiary}
+        />
+        <Route path='/local/:primary/:secondary' component={Secondary} />
+        <Route path='/local/:primary' component={Primary} />
+        <Route component={NotFound} />
+      </Switch>
+    </main>
+  </div>
+);
 
 export default withRouter(App);
