@@ -4,9 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Link from '@material-ui/core/Link';
-// import Typography from '@material-ui/core/Typography';
 
-import logo from '../logo.png';
+import logo from '../images/logo.png';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -20,7 +19,8 @@ const useStyles = makeStyles(theme => ({
   },
   bar: {
     paddingTop: '10px',
-    paddingBottom: '10px'
+    paddingBottom: '10px',
+    zIndex: theme.zIndex.drawer + 1
   },
   toolbar: {
     display: 'flex',
@@ -32,12 +32,6 @@ const useStyles = makeStyles(theme => ({
   logo: {
     maxHeight: '100px'
   },
-  linkContainer: {
-    // display: 'flex',
-    // flexDirection: 'row',
-    // flexWrap: 'nowrap',
-    // justifyContent: 'flex-end'
-  },
   link: {
     color: 'white',
     marginRight: theme.spacing(2)
@@ -45,30 +39,18 @@ const useStyles = makeStyles(theme => ({
   activeLink: {
     color: theme.palette.primary.main,
     marginRight: theme.spacing(2)
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6)
   }
 }));
 
-const Header = props => {
+const Menu = props => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <AppBar position='static' color='secondary' className={classes.bar}>
         <Toolbar className={classes.toolbar}>
-          {/* <IconButton
-            edge='start'
-            className={classes.menuButton}
-            color='inherit'
-            aria-label='menu'
-          >
-            <MenuIcon />
-          </IconButton> */}
           <img src={logo} className={classes.logo} alt='Logo' />
-          <div className={classes.linkContainer}>
+          <div>
             <Link
               href='https://wealthwisdomwellness.us/'
               className={classes.link}
@@ -95,7 +77,7 @@ const Header = props => {
             </Link>
             <Link
               component={RouterLink}
-              to='/local/'
+              to='/wealth'
               className={classes.activeLink}
             >
               Directory
@@ -113,4 +95,4 @@ const Header = props => {
   );
 };
 
-export default Header;
+export default Menu;

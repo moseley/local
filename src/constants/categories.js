@@ -321,11 +321,6 @@ const categories = [
             title: 'Employment Attorney',
             yelp: ['employmentlawyers']
           },
-          {
-            id: 'estateplanning',
-            title: 'Estate Planning Attorney',
-            yelp: ['estateplanning']
-          },
           { id: 'divorce', title: 'Family Attorney', yelp: ['divorce'] },
           {
             id: 'forclosurelawyers',
@@ -358,11 +353,6 @@ const categories = [
             yelp: ['personal_injury']
           },
           {
-            id: 'willstrustsprobates',
-            title: 'Probate Attorney',
-            yelp: ['willstrustsprobates']
-          },
-          {
             id: 'realestatelawyers',
             title: 'Real Estate Attorney',
             yelp: ['realestatelawyers']
@@ -377,6 +367,23 @@ const categories = [
             id: 'workerscomplaw',
             title: 'Workers Compensation Attorney',
             yelp: ['workerscomplaw']
+          }
+        ]
+      },
+      {
+        id: 'estateplanning',
+        title: 'Estate Planning',
+        image: 'estate-planning.png',
+        tertiary: [
+          {
+            id: 'estateplanningattorney',
+            title: 'Estate Planning Attorney',
+            yelp: ['estateplanning']
+          },
+          {
+            id: 'willstrustsprobates',
+            title: 'Probate Attorney',
+            yelp: ['willstrustsprobates']
           },
           {
             id: 'assetprotection',
@@ -520,8 +527,62 @@ const categories = [
       },
       {
         id: 'entertainment',
-        title: 'Entertainment & Activities',
+        title: 'Entertainment',
         image: 'entertainment.png',
+        tertiary: [
+          { id: 'gun_ranges', title: 'Gun Ranges', yelp: ['gun_ranges'] },
+          { id: 'eventservices', title: 'Events', yelp: ['eventservices'] },
+          { id: 'galleries', title: 'Art Galleries', yelp: ['galleries'] },
+          { id: 'festivals', title: 'Festivals', yelp: ['festivals'] },
+          {
+            id: 'jazzandblues',
+            title: 'Jazz & Blues',
+            yelp: ['jazzandblues']
+          },
+          { id: 'artmuseums', title: 'Museums', yelp: ['artmuseums'] },
+          { id: 'opera', title: 'Opera & Ballet', yelp: ['opera'] },
+          { id: 'theater', title: 'Performing Arts', yelp: ['theater'] },
+          {
+            id: 'stadiumsarenas',
+            title: 'Stadiums & Arenas',
+            yelp: ['stadiumsarenas']
+          },
+          {
+            id: 'musicvenues',
+            title: 'Bands & Groups',
+            yelp: ['musicvenues']
+          },
+          { id: 'bartenders', title: 'Bartenders', yelp: ['bartenders'] },
+          { id: 'catering', title: 'Caterers', yelp: ['catering'] },
+          { id: 'comedyclubs', title: 'Comedians', yelp: ['comedyclubs'] },
+          { id: 'magic', title: 'Magic', yelp: ['magicians'] },
+          { id: 'magicians', title: 'Magicians', yelp: ['magicians'] },
+          {
+            id: 'eventplanning',
+            title: 'Party & Event Planning',
+            yelp: ['eventplanning']
+          },
+          {
+            id: 'partyequipmentrentals',
+            title: 'Party Equipment Rentals',
+            yelp: ['partyequipmentrentals']
+          },
+          {
+            id: 'partysupplies',
+            title: 'Party Supplies',
+            yelp: ['partysupplies']
+          },
+          {
+            id: 'wedding_planning',
+            title: 'Wedding Planning',
+            yelp: ['wedding_planning']
+          }
+        ]
+      },
+      {
+        id: 'activities',
+        title: 'Activities',
+        image: 'activities.png',
         tertiary: [
           { id: 'gun_ranges', title: 'Gun Ranges', yelp: ['gun_ranges'] },
           { id: 'eventservices', title: 'Events', yelp: ['eventservices'] },

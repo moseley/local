@@ -1,29 +1,52 @@
 import React from 'react';
-import { Switch, Route, withRouter } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { makeStyles } from '@material-ui/core/styles';
 
-import Header from './components/Header';
-import Home from './containers/Home';
-import Primary from './containers/Primary';
-import Secondary from './containers/Secondary';
-import Tertiary from './containers/Tertiary';
-import NotFound from './containers/NotFound';
+import Paths from './components/Paths';
+import Menu from './components/Menu';
+import CategoryTabs from './components/CategoryTabs';
+import CategoryList from './components/CategoryList';
+import CategoryCards from './components/CategoryCards';
+import AdvertiserCards from './components/AdvertiserCards';
+import BusinessCards from './components/BusinessCards';
 
-const App = () => (
-  <div className='App'>
-    <Header />
-    <main>
-      <Switch>
-        <Route path='/local/' exact component={Home} />
-        <Route
-          path='/local/:primary/:secondary/:tertiary'
-          component={Tertiary}
-        />
-        <Route path='/local/:primary/:secondary' component={Secondary} />
-        <Route path='/local/:primary' component={Primary} />
-        <Route component={NotFound} />
-      </Switch>
-    </main>
-  </div>
-);
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  rows: {
+    display: 'flex',
+    flexDirection: 'row',
+    maxWIdth: '100%'
+  },
+  cols: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+}));
 
-export default withRouter(App);
+const App = props => {
+  const cats = useSelector(state => state.cats);
+  const { tertiary } = cats;
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <Paths />
+      <Menu />
+      <CategoryTabs />
+      <CategoryCards />
+      {tertiary !== '' && (
+        <div className={classes.rows}>
+          <CategoryList />
+          <div className={classes.cols}>
+            <AdvertiserCards />
+            <BusinessCards />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default App;

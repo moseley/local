@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
-import yelp from '../constants/yelp';
+import settings from '../constants/settings';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -30,7 +30,12 @@ const Paging = props => {
       <Button
         key='nextButton'
         onClick={props.onNext}
-        disabled={props.page * yelp.query.limit < props.total ? true : false}
+        disabled={
+          props.page * settings.resultsPerPage <
+          props.total + settings.resultsPerPage - 1
+            ? true
+            : false
+        }
       >
         Next <ArrowForwardIosIcon />
       </Button>

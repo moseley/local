@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -9,23 +9,23 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    '& > *': {
-      width: 345
-    }
+    maxWidth: 300,
+    margin: theme.spacing(2, 0)
   },
   media: {
-    height: 140
+    width: 300,
+    height: 200
   }
 }));
 
 const HomeCard = props => {
+  const history = useHistory();
   const classes = useStyles();
 
-  const { path, title, image } = props;
+  const { p, s, title, image } = props;
 
-  const clickHandler = event => {
-    event.preventDefault();
-    props.history.push(`${path}`);
+  const clickHandler = _event => {
+    history.push(`${p}/${s}`);
   };
 
   return (
@@ -35,13 +35,13 @@ const HomeCard = props => {
           {image && (
             <CardMedia
               className={classes.media}
-              image={require(`../media/categories/${image}`)}
+              image={require(`../images/categories/${image}`)}
               title={title}
             />
           )}
           <CardContent>
-            <Typography gutterBottom variant='h5' component='h2'>
-              {title}
+            <Typography variant='h6' align='center' color='primary'>
+              {title.toUpperCase()}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -50,4 +50,4 @@ const HomeCard = props => {
   );
 };
 
-export default withRouter(HomeCard);
+export default HomeCard;
