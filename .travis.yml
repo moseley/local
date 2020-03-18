@@ -6,9 +6,15 @@ cache:
   directories:
     - node_modules
 script:
+  - yarn run clean-force
+  - yarn run remove-modules
+  - yarn run install-yarn
   - yarn test
   - yarn run test:coverage
   - yarn run build
+  - yarn run audit-fix
+before_deploy:
+  - cd $TRAVIS_BUILD_DIR
 deploy:
   provider: pages
   token: $github_token
