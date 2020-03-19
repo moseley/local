@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
   bar: {
     paddingTop: '10px',
     paddingBottom: '10px',
-    zIndex: theme.zIndex.drawer + 1
+    zIndex: theme.zIndex.drawer + 1,
+    boxShadow: 'none'
   },
   toolbar: {
     display: 'flex',
