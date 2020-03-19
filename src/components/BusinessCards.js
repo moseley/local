@@ -52,6 +52,7 @@ const BusinessCards = props => {
       await axios
         .get(url, {
           headers: {
+            'Access-Control-Allow-Origin': '*',
             Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
           },
           params: {
