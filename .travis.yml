@@ -11,7 +11,8 @@ script:
   - yarn run build
 deploy:
   provider: pages
-  token: $GITHUB_TOKEN
-  local_dir: build
+  cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_histroy: true
   on:
     branch: master
