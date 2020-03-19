@@ -1,5 +1,5 @@
-os: linux
 language: node_js
+os: linux
 node_js:
   - 'stable'
 cache:
@@ -12,7 +12,8 @@ script:
 deploy:
   provider: pages
   cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_histroy: true
+  token: $GITHUB_TOKEN
+  keep_history: true
+  strategy: git
   on:
     branch: master
