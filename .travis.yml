@@ -1,5 +1,7 @@
 language: node_js
-os: linux
+os:
+  - 'linux'
+dist: xenial
 node_js:
   - 'stable'
 cache:
@@ -15,5 +17,6 @@ deploy:
   token: $GITHUB_TOKEN
   keep_history: true
   strategy: git
+  edge: true
   on:
     branch: master
