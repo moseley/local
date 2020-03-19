@@ -1,0 +1,18 @@
+os: linux
+language: node_js
+node_js:
+  - 'stable'
+cache:
+  directories:
+    - node_modules
+script:
+  - yarn test
+  - yarn run test:coverage
+  - yarn run build
+deploy:
+  provider: pages
+  cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_histroy: true
+  on:
+    branch: master
