@@ -1,7 +1,6 @@
 {
   "name": "local",
-  "version": "0.2.0",
-  "proxy": "https://api.yelp.com",
+  "version": "0.2.1",
   "homepage": "https://moseley.github.io/local/",
   "license": "ISC",
   "dependencies": {

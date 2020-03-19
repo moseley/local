@@ -46,9 +46,9 @@ const BusinessCards = props => {
   useEffect(() => {
     const getBusinesses = async () => {
       let url = settings.yelpSearchUrl;
-      if (process.env.NODE_ENV === 'development') {
-        url = settings.proxy + settings.yelpSearchUrl;
-      }
+      // if (process.env.NODE_ENV === 'development') {
+      url = settings.proxy + settings.yelpSearchUrl;
+      // }
       await axios
         .get(url, {
           headers: {
