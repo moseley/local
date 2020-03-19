@@ -36,15 +36,9 @@ const useStyles = makeStyles(theme => ({
 const Advertiser = props => {
   const classes = useStyles();
 
-  console.log(props);
-
-  const clickHandler = () => {
-    console.log('Card clicked');
-  };
-
   return (
     <div className={classes.root}>
-      <Card className={classes.card} onClick={clickHandler}>
+      <Card className={classes.card}>
         <CardContent>
           <Typography
             key={props.title}

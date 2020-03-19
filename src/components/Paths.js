@@ -33,7 +33,8 @@ const Paths = props => {
       } else if (paths.length === 1) {
         setPaths(paths[0]);
       } else {
-        setPaths();
+        history.push('/wealth');
+        // setPaths();
       }
     }
   }, [pathname, dispatch, history]);
